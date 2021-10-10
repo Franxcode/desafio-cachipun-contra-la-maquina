@@ -1,29 +1,7 @@
-// Inicio
-//      Leer cantidad veces a jugar
-//      Leer jugada de usuario (Piedra, Papel, Tijera)
-//      Generar jugada automatica computadora (math.random())
-//      Mostrar ganador (Felicitar al ganador en caso de ser el usuario, indicarle que ha perdido contra la maquina en caso de que esta sea la que gane, declarar un empate)
-// Fin
-
-// let vecesJugar = parseInt(prompt("Ingrese veces a jugar:"));
-// let jugadaUsuario = prompt('Elegí tu jugada', 'Piedra, Papel o Tijera');
-
-/*
-let jugadaUsuario
-
-do {
-  jugada = prompt('Elige tu jugada, PIEDRA PAPEL o TIJERA');
-} while (jugadaUsuario !== 'PIEDRA' && jugadaUsuario !== 'PAPEL' && jugadaUsuario !== 'TIJERA');
-*/
-
 let jugadaUsuario;
 let vecesJugar = parseInt(prompt("Ingrese veces a jugar:"));
 
 for (i = 1; i <= vecesJugar; i++) {
-  const ganaste = "fuiste el ganador!.";
-  const perdiste = "fuiste el perdor TT-TT";
-  const empataste = "han empatado.";
-
   do {
     jugadaUsuario = prompt(
       "Elige tu jugada, Piedra Papel o Tijera"
@@ -45,23 +23,23 @@ for (i = 1; i <= vecesJugar; i++) {
   }
 
   if (jugadaUsuario === jugadaMaquina) {
-    alert(ganaste);
+    alert("Han empatado");
     console.log(
-      `En la ronda N°${i} elegiste ${jugadaUsuario} y la máquina eligió ${jugadaMaquina}, ${ganaste}`
+      `En la ronda N°${i} elegiste ${jugadaUsuario} y la máquina eligió ${jugadaMaquina}`
     );
   } else if (
     (jugadaUsuario === "piedra" && jugadaMaquina === "tijera") ||
     (jugadaUsuario === "papel" && jugadaMaquina === "piedra") ||
     (jugadaUsuario === "tijera" && jugadaMaquina === "papel")
   ) {
-    alert(perdiste);
+    alert("Has ganado");
     console.log(
-      `En la ronda N°${i} elegiste ${jugadaUsuario} y la máquina eligió ${jugadaMaquina}, ${perdiste}`
+      `En la ronda N°${i} elegiste ${jugadaUsuario} y la máquina eligió ${jugadaMaquina}`
     );
   } else {
-    alert(empataste);
+    alert("Perdiste");
     console.log(
-      `En la ronda N°${i} elegiste ${jugadaUsuario} y la máquina eligió ${jugadaMaquina}, ${empataste}`
+      `En la ronda N°${i} elegiste ${jugadaUsuario} y la máquina eligió ${jugadaMaquina}`
     );
   }
 }
