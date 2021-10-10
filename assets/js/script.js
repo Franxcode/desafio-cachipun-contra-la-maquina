@@ -23,7 +23,7 @@ for (i = 1; i <= vecesJugar; i++) {
   }
 
   if (jugadaUsuario === jugadaMaquina) {
-    alert("Han empatado");
+    alert("Has empatado con la máquina.");
     console.log(
       `En la ronda N°${i} elegiste ${jugadaUsuario} y la máquina eligió ${jugadaMaquina}`
     );
@@ -32,12 +32,12 @@ for (i = 1; i <= vecesJugar; i++) {
     (jugadaUsuario === "papel" && jugadaMaquina === "piedra") ||
     (jugadaUsuario === "tijera" && jugadaMaquina === "papel")
   ) {
-    alert("Has ganado");
+    alert("Le has ganado a la máquina.");
     console.log(
       `En la ronda N°${i} elegiste ${jugadaUsuario} y la máquina eligió ${jugadaMaquina}`
     );
   } else {
-    alert("Perdiste");
+    alert("Has perdido contra la máquina.");
     console.log(
       `En la ronda N°${i} elegiste ${jugadaUsuario} y la máquina eligió ${jugadaMaquina}`
     );
