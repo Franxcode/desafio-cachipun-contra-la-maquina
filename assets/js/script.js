@@ -1,8 +1,18 @@
 function userPlay() {
-  let userPlay = parseInt(document.getElementById("userPlay").value);
+  let userPlay = document.getElementById("userPlay").value.toLowerCase();
   document.getElementById(
     "user_play"
   ).innerHTML = `La jugada del usuario es: ${userPlay} <br>`;
+}
+
+let timesPlay = document.getElementById("timesPlay").value;
+
+for (i = 1; i <= timesPlay; i++) {
+  do {} while (
+    userPlay !== "piedra" &&
+    userPlay !== "papel" &&
+    userPlay !== "tijera"
+  );
 }
 
 document
@@ -10,6 +20,59 @@ document
   .addEventListener("click", function () {
     userPlay();
   });
+
+function rules() {
+  let userPlay = document.getElementById("userPlay").value;
+  let machinePlay = Math.floor(Math.random() * 3 + 1);
+  //   Usuario gana
+  if (userPlay == "Tijera" && machinePlay == "Papel") {
+    document.getElementById(
+      "user_play"
+    ).innerHTML = `El usuario jugo ${userPlay} y la maquina jugo ${machinePlay}, el usuario ha ganado.`;
+  }
+  if (userPlay == "Papel" && machinePlay == "Piedra") {
+    document.getElementById(
+      "user_play"
+    ).innerHTML = `El usuario jugo ${userPlay} y la maquina jugo ${machinePlay}, el usuario ha ganado.`;
+  }
+  if (userPlay == "Piedra" && machinePlay == "Tijera") {
+    document.getElementById(
+      "user_play"
+    ).innerHTML = `El usuario jugo ${userPlay} y la maquina jugo ${machinePlay}, el usuario ha ganado.`;
+  }
+  //   Maquina gana
+  if (machinePlay == "Tijera" && userPlay == "Papel") {
+    document.getElementById(
+      "user_play"
+    ).innerHTML = `El usuario jugo ${userPlay} y la maquina jugo ${machinePlay}, la maquina ha ganado.`;
+  }
+  if (machinePlay == "Papel" && userPlay == "Piedra") {
+    document.getElementById(
+      "user_play"
+    ).innerHTML = `El usuario jugo ${userPlay} y la maquina jugo ${machinePlay}, la maquina ha ganado.`;
+  }
+  if (machinePlay == "Piedra" && userPlay == "Tijera") {
+    document.getElementById(
+      "user_play"
+    ).innerHTML = `El usuario jugo ${userPlay} y la maquina jugo ${machinePlay}, la maquina ha ganado.`;
+  }
+  //   Empate
+  if (userPlay == "Tijera" && machinePlay == "Tijera") {
+    document.getElementById(
+      "user_play"
+    ).innerHTML = `El usuario jugo ${userPlay} y la maquina jugo ${machinePlay}, es un empate.`;
+  }
+  if (userPlay == "Papel" && machinePlay == "Papel") {
+    document.getElementById(
+      "user_play"
+    ).innerHTML = `El usuario jugo ${userPlay} y la maquina jugo ${machinePlay}, es un empate.`;
+  }
+  if (userPlay == "Piedra" && machinePlay == "Piedra") {
+    document.getElementById(
+      "user_play"
+    ).innerHTML = `El usuario jugo ${userPlay} y la maquina jugo ${machinePlay}, es un empate.`;
+  }
+}
 // let jugadaUsuario;
 // let vecesJugar = parseInt(prompt("Ingrese veces a jugar:"));
 
